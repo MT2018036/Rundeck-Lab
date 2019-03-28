@@ -38,6 +38,22 @@
   ```username="Put Client Node User Here" sudo-command-enabled="true"``` <br/>
   ```sudo-password-option="option.sudoPassword"/>``` <br/>
   
+  # by me -> go to "/var/rundeck/projects/demo/etc" make a file with name "resourses.xml" & copy the below content
+  
+ <?xml version="1.0" encoding="UTF-8"?>
+
+<project>
+  
+<node name="localhost" description="Rundeck server node" tags="" hostname="localhost" osArch="amd64" osFamily="unix" osName="Linux" osVersion="4.4.0-116-generic" username="rundeck"/>
+
+<node name="client" description="Client Node" tags=""
+hostname="172.17.0.3" osArch="amd64" osFamily="unix"
+osName="Linux" osVersion="4.13.0-36-generic"
+username="root" sudo-command-enabled="true"
+sudo-password-option="option.sudoPassword"/>
+  
+</project>
+  
 3. Authenticated access to the clients <br/> 
 
     Rundeck uses ssh with ssh keys to securely access the client nodes. <br/>
@@ -52,10 +68,11 @@
     You can now view the id_rsa.pub file using ```cat id_rsa.pub```. <br/>
     
     Copy the contents of id_rsa.pub file from the rundeck server and then perform the following operations in the client         node. <br/>
+# by me -> create a docker using "docker run -it ubuntu /bin/bash", to get ip use "cat etc/hosts"  install shh without sudo
     
     ```cd ~``` <br/>
     ```mkdir -p .ssh``` <br/>
-    ```cat >> ~/.ssh/authorized_keys``` <br/>
+    ```cat >> ~/.ssh/authorized_keys``` <br/> #ctrl+s
     ```<Paste the contents of id_rsa.pub file from the rundeck server>``` <br/>
     
     Verify that the contents were copied properly by viewing the contents of ~/.ssh/authorized_keys in the client node. <br/>
@@ -63,9 +80,9 @@
     ```cat ~/.ssh/authorized_keys``` <br/>
     
     For this to work, SSH has to be installed on the nodes. If not already installed, install SSH and start it using the below commands. <br/>
-
-    ```sudo apt-get install ssh``` <br/>
-    ```sudo service ssh start ``` <br/>
+    ```apt-get update``` <br/>
+    ```apt-get install ssh``` <br/>
+    ```service ssh start ``` <br/>
 
 4. Verify the SSH connection <br/>
 
