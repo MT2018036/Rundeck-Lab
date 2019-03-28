@@ -39,21 +39,19 @@
   ```sudo-password-option="option.sudoPassword"/>``` <br/>
   
   # by me -> go to "/var/rundeck/projects/demo/etc" make a file with name "resourses.xml" & copy the below content
-  ```<?xml version="1.0" encoding="UTF-8"?>
+    ```<?xml version="1.0" encoding="UTF-8"?>
 
-<project>
+        <project>
   
-<node name="localhost" description="Rundeck server node" tags="" hostname="localhost" osArch="amd64" osFamily="unix" osName="Linux" osVersion="4.4.0-116-generic" username="rundeck"/>
+        <node name="localhost" description="Rundeck server node" tags="" hostname="localhost" osArch="amd64" osFamily="unix"        osName="Linux" osVersion="4.4.0-116-generic" username="rundeck"/>
 
-<node name="client" description="Client Node" tags=""
-hostname="172.17.0.3" osArch="amd64" osFamily="unix"
-osName="Linux" osVersion="4.13.0-36-generic"
-username="root" sudo-command-enabled="true"
-sudo-password-option="option.sudoPassword"/>```
+    <node name="client" description="Client Node" tags=""
+    hostname="172.17.0.3" osArch="amd64" osFamily="unix"
+    osName="Linux" osVersion="4.13.0-36-generic"
+    username="root" sudo-command-enabled="true"
+    sudo-password-option="option.sudoPassword"/>
   
- 
-  
-</project>
+    </project>``` <br/>
   
 3. Authenticated access to the clients <br/> 
 
