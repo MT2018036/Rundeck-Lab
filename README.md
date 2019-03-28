@@ -39,8 +39,7 @@
   ```sudo-password-option="option.sudoPassword"/>``` <br/>
   
   # by me -> go to "/var/rundeck/projects/demo/etc" make a file with name "resourses.xml" & copy the below content
-  
- <?xml version="1.0" encoding="UTF-8"?>
+  ```<?xml version="1.0" encoding="UTF-8"?>
 
 <project>
   
@@ -50,7 +49,9 @@
 hostname="172.17.0.3" osArch="amd64" osFamily="unix"
 osName="Linux" osVersion="4.13.0-36-generic"
 username="root" sudo-command-enabled="true"
-sudo-password-option="option.sudoPassword"/>
+sudo-password-option="option.sudoPassword"/>```
+  
+ 
   
 </project>
   
